@@ -34,6 +34,10 @@ hbs.registerHelper('screamIt' , (text) => {
   return text.toUpperCase();
 });
 
+hbs.registerHelper('prjectpage' , (text) => {
+  return text.toUpperCase(text);
+});
+
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
@@ -47,6 +51,12 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    pageTitle: 'Project Page',
+    message: 'Welcome to project page'
+  });
+});
 // /bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
   res.send({
